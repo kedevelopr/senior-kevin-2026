@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>githumu senior school | Excellence in Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .blue-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+    </style>
+
+    <style>
+        #backToTop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position */
+  bottom: 20px; /* 20px from the bottom */
+  right: 20px; /* 20px from the right */
+  z-index: 99; /* Sit on top of everything */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #1e3a8a; /* Your Theme Blue */
+  color: white; /* Arrow color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50%; /* Make it a circle */
+  font-size: 18px; /* Increase font size */
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+#backToTop:hover {
+  background-color: #3b82f6; /* Lighter blue on hover */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+</style>
+     
+<style>
+     @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
+
+  
+  
+
+
+     .second-sect {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f1f5f9; /* A light, neutral background */
+            color: #1e293b; /* Darker text for readability */
+            padding: 2rem;
+        }
+        .profile-card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            max-width: 42rem;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;}
+        /* Mobile-friendly curve: less extreme on small screens */
+        .curved-edge {
+            border-radius: 0 0 0 100px;
+        }
+        @media (min-width: 768px) {
+            .curved-edge {
+                border-bottom-left-radius: 50% 100%;
+                border-top-left-radius: 50% 100%;
+            }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .road-map{
+    width:100%;
+    margin:auto;
+    padding-top:30px;
+}
+.route iframe{
+width: 100%;
+}
+    </style>
+
+
+</head>
+<body class="bg-slate-50 font-sans text-gray-800">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-800">GITHUMU<span class="text-blue-500">HIGH</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-blue-600 font-medium">Home</a>
+                    <a href="about us.html" class="hover:text-blue-600 font-medium">About Us</a>
+                    <a href="school life.html" class="hover:text-blue-600 font-medium">School Life</a>
+                    <a href="#portal" target="_blank" rel="noopener noreferrer" class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition">Holiday Assignment</a>
+                    <a href="#clearance" class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition">Clearance</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-blue-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-50 px-4 pt-2 pb-4 space-y-1 shadow-inner">
+            <a href="index.html" class="block py-2 text-blue-800 border-b">Home</a>
+            <a href="about us.html" class="block py-2 text-blue-800 border-b">About Us</a>
+            <a href="school life.html" class="block py-2 text-blue-800 border-b">School Life</a>
+            <a href="#portal" class="block py-2 text-blue-800 border-b">Assignments</a>
+            <a href="#clearance" class="block py-2 text-blue-700 font-bold">Clearance Page</a>
+        </div>
+    </nav>
+    <section class="bg-blue-50 w-full">
+  <div class="max-w-full mx-auto flex flex-col md:flex-row items-stretch justify-between overflow-hidden bg-white shadow-sm border-b border-gray-100">
+    
+    <div class="w-full md:w-1/2 p-10 md:p-20 lg:p-24 flex flex-col justify-center space-y-6">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-blue-900">
+        About Us
+      </h2>
+      <p class="text-lg text-blue-700 leading-relaxed max-w-md">
+       Githumu Boys
+      </p>
+      <div>
+        <button class="mt-4 px-8 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition duration-300">
+          scroll to Learn More
+        </button>
+      </div>
+    </div>
+
+    <div class="w-full md:w-1/2">
+      <img 
+        src="pictures/52.jpeg" 
+        alt="Our Team" 
+        class="w-full h-full object-cover min-h-[400px]"
+      />
+    </div>
+
+  </div>
+</section>
+    
+
+<section class="bg-white py-16 px-6 md:px-12 lg:px-24">
+  <div class="max-w-7xl mx-auto space-y-24">
+    
+    <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+      <div class="w-full md:w-1/2 space-y-4">
+        <span class="text-blue-600 font-medium italic">Our school</span>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-blue-900 uppercase tracking-tight">
+          Brief history
+        </h2>
+        <p class="text-gray-600 leading-relaxed text-lg">
+          
+          Established by the Africa Inland Mission (AIM) in the early 20th century, Githumu Boys High School began as a pivotal mission station in the heart of Kandara, Murang’a County, serving as a center for both spiritual and academic enlightenment. Over the decades, the institution evolved from an intermediate missionary school into a premier secondary boarding school, gaining a reputation for molding disciplined and visionary young men. Set against the serene, rolling hills of Central Kenya, the school has transitioned into a modern academic powerhouse that balances a rigorous KCSE curriculum with vibrant success in the creative arts and drama. Today, Githumu Boys stands as a testament to its rich colonial-era roots and its enduring commitment to excellence, having produced generations of leaders who continue to impact the socio-economic landscape of Kenya.
+        </p>
+      </div>
+      <div class="w-full md:w-1/2 flex justify-center">
+        <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+          <img 
+            src="pictures/14.jpeg" 
+            alt="Founders" 
+            class="w-full h-full object-cover rounded-full border-8 border-blue-50 shadow-xl"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-20">
+      <div class="w-full md:w-1/2 flex justify-center">
+        <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+          <img 
+            src="pictures/13.jpeg" 
+            alt="Mission and Vision" 
+            class="w-full h-full object-cover rounded-full border-8 border-blue-50 shadow-xl"
+          />
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 space-y-4">
+        <span class="text-blue-600 font-medium italic"></span>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-blue-900 uppercase tracking-tight">
+          Mission
+        </h2>
+        <p class="text-gray-600 leading-relaxed text-lg">
+          To provide a safe environment for our learners to realize their potential and become useful in the society.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="bg-blue-50 py-20 px-6 md:px-12 lg:px-24 overflow-hidden">
+  <div class="max-w-7xl mx-auto relative">
+    
+    <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-600 rounded-lg hidden md:block -z-10"></div>
+    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-blue-200 rounded-full hidden md:block -z-10 opacity-50"></div>
+
+    <div class="bg-white shadow-xl rounded-sm flex flex-col md:flex-row items-stretch min-h-[500px] overflow-visible">
+      
+      <div class="w-full md:w-1/2 p-6 md:p-16 flex flex-col justify-center items-center md:items-start space-y-6">
+  <h2 class="text-3xl md:text-5xl font-bold text-slate-900 leading-tight text-center md:text-left">
+    Our School <span class="text-blue-600">Anthem</span>
+  </h2>
+
+  <div class="text-gray-600 text-base md:text-lg leading-relaxed text-center md:text-left font-medium italic">
+    
+    <p class="mb-6">
+      O God almighty with us forever,<br>
+      Bless our Githumu family,<br>
+      We live together forever ever,<br>
+      We join hands together forever,<br>
+      We are committed, to shine (*2)<br>
+      Githumu boys like eagles soar.
+    </p>
+
+    <p class="mb-6">
+      In Academics we are champions,<br>
+      In co-curricular we are the stars,<br>
+      Our stake holders in our support,<br>
+      And our mission is to conquer all,<br>
+      We are committed, to shine (*2)<br>
+      Githumu Boys like eagles soar.
+    </p>
+
+    <p class="uppercase tracking-wide font-bold text-slate-800">
+      Githumu Boys (BOYS) (*2)<br>
+      Our trust is in God.
+    </p>
+    
+  </div>
+</div>
+
+      <div class="w-full md:w-1/2 relative p-4 md:p-0">
+        <div class="h-full w-full md:scale-110 md:translate-x-6 md:-translate-y-6 shadow-2xl rounded-lg overflow-hidden border-4 border-white bg-blue-100">
+          <img 
+            src="pictures/anthem.jpg" 
+            alt="School Vision" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="bg-blue-600 py-12 px-4 md:px-12 lg:px-24 text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8 md:gap-20">
+    
+    <div class="w-full md:w-5/12">
+      <div class="aspect-[4/3] md:aspect-[3/4] overflow-hidden bg-blue-900 shadow-2xl rounded-sm">
+        <img 
+          src="pictures/18.jpeg" 
+          alt="School Principal" 
+          class="w-full h-full object-cover grayscale"
+        />
+      </div>
+    </div>
+
+    <div class="w-full md:w-7/12 space-y-6">
+      <div class="flex flex-row items-stretch gap-4">
+        <div class="w-1 md:w-1.5 bg-white shrink-0"></div>
+        
+        <div>
+          <h2 class="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight uppercase">
+            School <br class="hidden md:block"/>
+            Principal <br class="hidden md:block"/>
+            Remarks
+          </h2>
+        </div>
+      </div>
+
+      <div class="max-w-xl">
+        <div id="remarks-text" class="text-base md:text-lg text-blue-50 leading-relaxed font-light line-clamp-3 transition-all duration-500">
+          <p>
+  Welcome to the official website of Githumu Boys High School.
+</p>
+
+<p class="mt-4">
+  As a premier Extra-County institution with a deep-rooted history in missionary excellence, our mission transcends mere academic instruction; we are dedicated to the holistic 'molding of men.' Our school stands as a beacon of discipline and hard work in the heart of Murang’a County, providing a serene environment where students are challenged to reach their full potential.
+</p>
+
+<p class="mt-4">
+  Furthermore, Githumu Boys stands at the forefront of educational transformation as a specialized hub for Competency-Based Curriculum (CBC) implementation. We take pride in our role as a training center for educators across the region, fostering a collaborative environment where teachers are equipped with the pedagogical tools necessary for the 21st century. Through state-of-the-art resources and proactive faculty development, we are fully prepared and committed to realizing the success of the CBC, ensuring our students transition seamlessly into a world that values practical skills, critical thinking, and innovation.
+</p>
+
+<p class="mt-4">
+  In today’s rapidly changing world, we pride ourselves on a curriculum that balances rigorous KCSE preparation with vibrant co-curricular programs in drama, sports, and the arts. We believe that every boy who passes through our gates carries the legacy of our founders—built on a foundation of integrity, resilience, and a commitment to service.
+</p>
+          <p class="mt-4">
+            Excellence is our tradition, and character is our strength."
+          </p>
+        </div>
+        
+        <button onclick="toggleRemarks()" id="toggle-btn" class="mt-6 group flex items-center gap-3 text-white font-semibold tracking-widest uppercase text-xs border-b-2 border-white pb-2 hover:text-blue-200 hover:border-blue-200 transition-all">
+          <span id="btn-text">Read Full Message</span>
+          <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleRemarks() {
+    const textContainer = document.getElementById('remarks-text');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+
+    if (textContainer.classList.contains('line-clamp-3')) {
+      textContainer.classList.remove('line-clamp-3');
+      btnText.innerText = 'Read Less';
+      btnIcon.classList.add('rotate-180'); 
+    } else {
+      textContainer.classList.add('line-clamp-3');
+      btnText.innerText = 'Read Full Message';
+      btnIcon.classList.remove('rotate-180');
+    }
+  }
+</script>
+
+
+<section class="bg-slate-900 py-20 px-6 md:px-12 lg:px-24 overflow-hidden relative">
+  <div class="absolute top-10 right-10 w-24 h-24 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
+  <div class="absolute bottom-10 left-10 w-32 h-32 bg-blue-400 rounded-full blur-3xl opacity-20"></div>
+
+  <div class="max-w-5xl mx-auto text-center space-y-12 relative z-10">
+    
+    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+      Join <span class="text-blue-400">Githumu Senior School</span> <br class="hidden md:block"/>
+      learn all this subjects
+    </h2>
+
+    <div class="relative inline-block group">
+      <div class="absolute inset-0 border-[12px] md:border-[20px] border-blue-200/20 -m-4 md:-m-8 rounded-xl transform group-hover:rotate-2 transition-transform duration-500"></div>
+      
+      <div class="relative bg-white p-2 md:p-4 rounded-lg shadow-2xl overflow-hidden">
+        <img 
+          src="pictures/49.jpeg" 
+          alt="Web Design Students" 
+          class="w-full max-w-3xl h-auto rounded-md"
+        />
+        
+        <div class="absolute -top-4 -right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg hidden md:block">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-spin-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <h3 class="text-xl md:text-2xl font-semibold text-blue-200 uppercase tracking-widest">
+        Learn all this subjects
+      </h3>
+      <p class="max-w-2xl mx-auto text-gray-400 text-lg">
+        <span class="text-white font-medium">MATHEMATICS</span>.<BR> 
+        <span class="text-white font-medium">ENGLISH</span>. 
+        <BR> 
+          <span class="text-white font-medium">KISWAHILI</span>.<br>
+          <span class="text-white font-medium">HOME SCIENCE</span>.<br>
+          <span class="text-white font-medium">ELECTRICITY</span>.<br>
+          <span class="text-white font-medium">BUILDING CONSTRACTION</span>.<br>
+          <span class="text-white font-medium">GEOGRAPHY</span>.<br>
+
+        <span class="text-white font-medium">CHEMISTRY</span>. 
+        <BR> 
+        <span class="text-white font-medium">C.R.E</span>. 
+        <BR> 
+        <span class="text-white font-medium">HISTORY</span>. 
+        <BR> 
+        <span class="text-white font-medium">COMPUTER SCIENCE</span>. 
+        <BR> 
+        <span class="text-white font-medium">I.C.T</span>. 
+        <BR> 
+        <span class="text-white font-medium">BIOLOGY</span>. 
+        <BR>
+          <span class="text-white font-medium">WOOD WORK</span>. 
+        <BR>  
+          <span class="text-white font-medium">POWER MECHANICS</span>. 
+        <BR> 
+        <span class="text-white font-medium">PHYSICS</span>. 
+        
+      </p>
+     
+    </div>
+  </div>
+</section>
+
+
+ 
+
+
+<section class="bg-[#0f172a] py-12 lg:py-24 overflow-hidden relative">
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[120px] -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
+  <div class="max-w-[1400px] mx-auto px-6 mb-12 relative z-10">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3 text-blue-400 font-black uppercase tracking-[0.2em] text-xs md:text-sm">
+          <span class="w-12 h-1 bg-blue-500"></span>
+          Life at Githumu High
+        </div>
+        <h2 class="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-[0.9]">
+          Our <span class="text-transparent" style="-webkit-text-stroke: 1.5px #60a5fa;">Clubs</span>
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative flex overflow-x-auto scrollbar-hide group py-8 touch-pan-x active:cursor-grabbing">
+    <div class="flex animate-marquee whitespace-nowrap gap-6 lg:gap-10 pointer-events-auto">
+      
+      <div class="club-card-base">
+        <img src="pictures/football.jpg" class="card-img" />
+        <div class="card-overlay"></div>
+        <div class="card-content"><span></span><h4>Football Club</h4></div>
+      </div>
+ 
+      <div class="club-card-base">
+        <img src="pictures/music.jpg" class="card-img" />
+        <div class="card-overlay"></div>
+        <div class="card-content"><span></span><h4>Music</h4></div>
+      </div>
+
+      <div class="club-card-base">
+        <img src="pictures/comp.jpg" class="card-img" />
+        <div class="card-overlay"></div>
+        <div class="card-content"><span></span><h4>ICT Society</h4></div>
+      </div>
+
+      <div class="club-card-base">
+        <img src="pictures/51.jpeg" class="card-img" />
+        <div class="card-overlay"></div>
+        <div class="card-content"><span></span><h4>Basketball</h4></div>
+      </div>
+
+      <div class="club-card-base">
+        <img src="pictures/chess.jpg" class="card-img" />
+        <div class="card-overlay"></div>
+        <div class="card-content"><span></span><h4>Chess Club</h4></div>
+      </div>
+
+      <div class="club-card-base">
+        <img src="pictures/drama.jpg" class="card-img" />
+        <div class="card-overlay"></div>
+        <div class="card-content"><span></span><h4>Drama Club</h4></div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+<footer class="bg-blue-950 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-2xl">G</div>
+                    <h2 class="text-2xl font-bold tracking-tight">GITHUMU <span class="text-blue-400">HIGH</span></h2>
+                </div>
+                <p class="text-blue-100/70 leading-relaxed">
+                    To be a nationally outstanding institution in academic and co-curricular achievements.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6 border-l-4 border-blue-500 pl-3">Quick Navigation</h4>
+                <ul class="space-y-4 text-blue-100/80">
+                    <li><a href="index.html" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> Home</a></li>
+                    <li><a href="about us.html" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> About Us</a></li>
+                    <li><a href="school life.html" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> School Life</a></li>
+                    
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6 border-l-4 border-blue-500 pl-3">Portals</h4>
+                <ul class="space-y-4 text-blue-100/80">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-lock text-[10px]"></i> Holiday Assignment</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-lock text-[10px]"></i> Clearance</a></li>
+                   
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div class="pt-8 border-t border-blue-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-100/50">
+            <p>&copy; 2026 Githumu Senior High School. All rights reserved.</p>
+           
+        </div>
+    </div>
+</footer>
+<button id="backToTop" onclick="scrollToTop()" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+// Get the button
+const mybutton = document.getElementById("backToTop");
+
+// When the user scrolls down 300px from the top of the document, show the button
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+};
+
+// When the user clicks on the button, scroll to the top of the document
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // This makes it scroll smoothly
+  });
+}
+</script>
+
+      <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>

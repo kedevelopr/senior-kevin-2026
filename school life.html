@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>githumu senior school | Excellence in Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .blue-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+    </style>
+<style>
+        #backToTop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position */
+  bottom: 20px; /* 20px from the bottom */
+  right: 20px; /* 20px from the right */
+  z-index: 99; /* Sit on top of everything */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #1e3a8a; /* Your Theme Blue */
+  color: white; /* Arrow color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50%; /* Make it a circle */
+  font-size: 18px; /* Increase font size */
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+#backToTop:hover {
+  background-color: #3b82f6; /* Lighter blue on hover */
+  transform: translateY(-5px); /* Slight lift effect */
+}
+</style>
+<style>
+        /* Smooth transition for the lightbox overlay */
+        #lightbox { transition: opacity 0.3s ease-in-out; }
+        .no-scroll { overflow: hidden; }
+    </style>
+
+</head>
+<body class="bg-slate-50 font-sans text-gray-800">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-800">GITHUMU<span class="text-blue-500">HIGH</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-blue-600 font-medium">Home</a>
+                    <a href="about us.html" class="hover:text-blue-600 font-medium">About Us</a>
+                    <a href="school life.html" class="hover:text-blue-600 font-medium">School Life</a>
+                    <a href="#portal" class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition">Holiday Assignment</a>
+                    <a href="#clearance" class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition">Clearance</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-blue-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-50 px-4 pt-2 pb-4 space-y-1 shadow-inner">
+            <a href="index.html" class="block py-2 text-blue-800 border-b">Home</a>
+            <a href="about us.html" class="block py-2 text-blue-800 border-b">About Us</a>
+            <a href="school life.html" class="block py-2 text-blue-800 border-b">School Life</a>
+            <a href="#portal" class="block py-2 text-blue-800 border-b">Assignments</a>
+            <a href="#clearance" class="block py-2 text-blue-700 font-bold">Clearance Page</a>
+        </div>
+    </nav>
+
+
+
+
+
+
+<section class="bg-gray-100 font-sans">
+
+    <header class="py-10 text-center">
+        <h1 class="text-4xl font-bold text-gray-800">Photo Gallery</h1>
+        <p class="text-gray-500 mt-2"></p>
+    </header>
+
+    <div class="container mx-auto px-4 mb-10">
+        <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            </div>
+    </div>
+
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex-col items-center justify-center p-4">
+        
+        <button id="closeBtn" class="absolute top-6 right-6 text-white text-5xl hover:text-gray-400 transition">&times;</button>
+
+        <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-6xl p-2 hover:bg-white/10 rounded-full transition">&#10094;</button>
+        <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-6xl p-2 hover:bg-white/10 rounded-full transition">&#10095;</button>
+
+        <img id="lightboxImg" src="" alt="Zoomed view" class="max-w-full max-h-[85vh] object-contain rounded shadow-2xl transition-transform duration-300">
+        
+        <div id="counter" class="text-white mt-4 font-light tracking-widest text-sm"></div>
+    </div>
+
+    <script>
+        const galleryGrid = document.getElementById('galleryGrid');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const counter = document.getElementById('counter');
+        
+        // 1. Array for 100 images
+        // Replace these with your actual image URLs
+        const images = [
+    'pictures/10.jpeg',
+    'pictures/11.jpeg',
+    'pictures/12.jpeg','pictures/13.jpeg','pictures/14.jpeg','pictures/15.jpeg','pictures/16.jpeg',
+    'pictures/17.jpeg','pictures/18.jpeg','pictures/25.jpeg','pictures/27.jpeg','pictures/30.jpeg',
+    'pictures/31.jpeg','pictures/32.jpeg','pictures/33.jpeg','pictures/34.jpeg','pictures/35.jpeg','pictures/37.jpeg',
+    'pictures/40.jpeg','pictures/49.jpeg','pictures/50.jpeg','pictures/51.jpeg','pictures/52.jpeg'
+    // ... continue until you have all 100
+];
+
+
+
+        let currentIndex = 0;
+
+        // 2. Generate the Gallery
+        images.forEach((src, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = "overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-white cursor-pointer group";
+            
+            wrapper.innerHTML = `
+                <img src="${src}" 
+                     loading="lazy" 
+                     alt="Photo ${index + 1}" 
+                     class="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+            `;
+            
+            wrapper.onclick = () => openLightbox(index);
+            galleryGrid.appendChild(wrapper);
+        });
+
+        // 3. Lightbox Functions
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.classList.add('no-scroll'); // Prevent background scrolling
+        }
+
+        function updateLightbox() {
+            lightboxImg.src = images[currentIndex];
+            counter.innerText = `PHOTO ${currentIndex + 1} OF ${images.length}`;
+        }
+
+        document.getElementById('closeBtn').onclick = () => {
+            lightbox.classList.add('hidden');
+            document.body.classList.remove('no-scroll');
+        };
+
+        // 4. Keyboard & Navigation
+        document.getElementById('nextBtn').onclick = (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightbox();
+        };
+
+        document.getElementById('prevBtn').onclick = (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightbox();
+        };
+
+        // Close on background click
+        lightbox.onclick = (e) => {
+            if (e.target === lightbox) document.getElementById('closeBtn').onclick();
+        };
+
+        // Support for arrow keys
+        window.onkeydown = (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === "ArrowRight") document.getElementById('nextBtn').click();
+            if (e.key === "ArrowLeft") document.getElementById('prevBtn').click();
+            if (e.key === "Escape") document.getElementById('closeBtn').click();
+        };
+    </script>
+</section>
+
+<footer class="bg-blue-950 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-2xl">G</div>
+                    <h2 class="text-2xl font-bold tracking-tight">GITHUMU <span class="text-blue-400">HIGH</span></h2>
+                </div>
+                <p class="text-blue-100/70 leading-relaxed">
+                    To be a nationally outstanding institution in academic and co-curricular achievements.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6 border-l-4 border-blue-500 pl-3">Quick Navigation</h4>
+                <ul class="space-y-4 text-blue-100/80">
+                    <li><a href="index.html" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> Home</a></li>
+                    <li><a href="about us.html" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> About Us</a></li>
+                    <li><a href="school life.html" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px]"></i> School Life</a></li>
+                    
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6 border-l-4 border-blue-500 pl-3">Portals</h4>
+                <ul class="space-y-4 text-blue-100/80">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-lock text-[10px]"></i> Holiday Assignment</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-lock text-[10px]"></i> Clearance</a></li>
+                   
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div class="pt-8 border-t border-blue-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-100/50">
+            <p>&copy; 2026 Githumu Senior High School. All rights reserved.</p>
+           
+        </div>
+    </div>
+</footer>
+
+    <button id="backToTop" onclick="scrollToTop()" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+// Get the button
+const mybutton = document.getElementById("backToTop");
+
+// When the user scrolls down 300px from the top of the document, show the button
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+};
+
+// When the user clicks on the button, scroll to the top of the document
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // This makes it scroll smoothly
+  });
+}
+</script>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
